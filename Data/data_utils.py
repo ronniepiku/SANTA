@@ -3,11 +3,11 @@ import os
 import pandas as pd
 import torch
 import numpy as np
+import nltk
 from sklearn.model_selection import train_test_split
 from nltk.sentiment import SentimentIntensityAnalyzer
 from Data.data_collector import collect_data
 from Data.data_vocab_utils import build_vocab
-import nltk
 
 # Device agnostic code
 device = torch.device("cpu")
