@@ -12,18 +12,18 @@ A CNN is used to create a sentiment analysis model which provides signals to tra
 4. Contributing
 5. License
 
-# Getting Started
+# 1. Getting Started
 Very easy to get started. Just clone this repo and run the main file. Feel free to make changes to suit your own needs.
 
-# Usage
-## Data collection
+# 2. Usage
+## 2.1 Data collection
 First of all, data needs to be collected to train the model. This is done by using the GNews API which collects articles in the Business section of the website. (It currently seems the max articles you can fetch on a free subscription is 3500 but feel free to test this further. The more articles gathered the better.)
 
 Articles are then filtered based on a selection of keywords which are likely to affect USD. After this is done, articles are assigned a sentiment using `SentimentIntensityAnalyzer()`. 0 -> Neutral, 1 -> Buy, 2 -> Sell.
 
 Next, data is turned into tensors and split into training and test datasets, ready to be entered into the model. A vocab list is also created at the same time.
 
-## Santa Model Architecture
+## 2.2 Santa Model Architecture
 The SANTA model is designed for sentiment analysis on financial news data. It utilizes a convolutional neural network (CNN) architecture for this purpose. Here's an explanation of its key components:
 
 ### Model Initialization
@@ -79,7 +79,7 @@ def forward(self, text):
 
 The final result is passed through a fully connected layer (self.fc) to produce sentiment predictions.
 
-## Predictions
+## 2.3 Predictions
 
 Finally, predictions are made by collecting raw data by again using the GNews API. Currently, business articles from the last 15 minutes are collected and then predictions are made on them.
 
@@ -88,13 +88,13 @@ Before predictions can be made, the same pre-processing method is applied to the
 The articles headline, it's url and finally it's sentiment is returned to the user. The user may then use this information to help them place a trade.
 
 
-# Features
+# 3. Features
 
 - Sentiment analysis of financial news articles
 - Real-time signal generation based on sentiment analysis
 - Customizable signal thresholds
 
-# Installation
+# 4. Installation
 The following libraries are required to run this code:
 
 - PyTorch
@@ -109,12 +109,12 @@ The following libraries are required to run this code:
 - pandas
 - NLTK
 
-# Acknowledgments
+# 5. Acknowledgments
 Thank you to the GNews API for massively increasing the ease of data collection. More info on Gnews can be found at:
 
 https://github.com/ranahaani/GNews
 
-# Contact Information
+# 6. Contact Information
 Please direct any questions to any of the following:
 
 - e-mail: ronniepiku1@hotmail.co.uk
